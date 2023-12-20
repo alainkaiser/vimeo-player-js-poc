@@ -1,13 +1,15 @@
-import "./App.css";
 import Player from "@vimeo/player";
 import { useEffect, useRef, useState } from "react";
-import { getChapters } from "./lib/video.service";
 import { v4 as uuidv4 } from "uuid";
+import "./App.css";
+import { getChapters } from "./lib/video.service";
 
 interface Flag {
   id: string;
   time: number;
 }
+
+const sampleButtonStyles = `rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`;
 
 function App() {
   const ref = useRef<HTMLDivElement>(null);
@@ -86,12 +88,7 @@ function App() {
   };
 
   const handlePlayStateClick = () => {
-    console.log(isPlaying);
-    if (isPlaying) {
-      player?.pause();
-    } else {
-      player?.play();
-    }
+    isPlaying ? player?.pause() : player?.play();
   };
 
   const handlePiPClick = async () => {
@@ -129,81 +126,81 @@ function App() {
       <div className="flex gap-2">
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handleAddFlagClick}
         >
           Flag
         </button>
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handleGoBack15sClick}
         >
           -15s
         </button>
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handlePlayStateClick}
         >
           {isPlaying ? "Pause" : "Play"}
         </button>
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handleFordward30sClick}
         >
           +30s
         </button>
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handleFullscreenClick}
         >
           Fullscreen
         </button>
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handlePiPClick}
         >
           {pipEnabled ? "Exit PiP" : "PiP"}
         </button>
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handleGetChaptersClick}
         >
           Get chapters
         </button>
         <button
           type="button"
-          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={sampleButtonStyles}
           onClick={handleSubtitleClick}
         >
           {subtitleEnabled ? "Disable" : "Enable"} subtitles
         </button>
         <div className="flex gap-1">
           <button
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className={sampleButtonStyles}
             onClick={() => handlePlaybackRateClick(0.75)}
           >
             0.75
           </button>
           <button
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className={sampleButtonStyles}
             onClick={() => handlePlaybackRateClick(1)}
           >
             1
           </button>
           <button
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className={sampleButtonStyles}
             onClick={() => handlePlaybackRateClick(1.25)}
           >
             1.25
           </button>
           <button
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className={sampleButtonStyles}
             onClick={() => handlePlaybackRateClick(1.5)}
           >
             1.5
