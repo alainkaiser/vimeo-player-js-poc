@@ -44,13 +44,8 @@ function App() {
       auth,
       "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay1laXdmdUBmYnJiLWxtcy0xZmY2Yy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsInN1YiI6ImZpcmViYXNlLWFkbWluc2RrLWVpd2Z1QGZicmItbG1zLTFmZjZjLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6XC9cL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbVwvZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJpYXQiOjE3MDYwMTcwNDUsImV4cCI6MTcwNjAyMDY0NSwidWlkIjoiMTY1MDdlNzIxMzhlZDgiLCJjbGFpbXMiOnsibmFtZSI6IkFsZXhhbmRlciBMZW1iZXJ0In19.IMEusQkx4AGjUzoiS9BgUelnpk2RqE_YiGFG3VPD52rAKWz8L8Co8dXhsoiwqBnhJpJ3udgcg3FCYYTBqNrdoLngZNY79yiwdqbRhFf9qydexsALyebWRGcAmJoF_Cjd0kCuARyYRiFxzXls2f4x3juGubH0-HAQA4DVeyiLnPG5JvzAhoxGdfo1NVZG84q0xJzn32i7KI0Cm0sP9qvZuQR0A-6PS7L09PN9Nwsa3RV8Mx9EE-TtU1qa0cXmRwJnzxQUV544NvshkIgXm_eX3de5YuBFVN6tLdN00nWiTVAz8UJYSJuWhDzvcZEZ6TDCP9JtwMYDG14C9cd1TTFrOQ"
     )
-      .then((userCredential) => {
-        const user = userCredential.user;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+      .then(() => {})
+      .catch(() => {});
 
     const db = getDatabase(app);
 
