@@ -71,9 +71,9 @@ function App() {
   useEffect(() => {
     if (!ref.current) return;
     const playerElement = new Player(ref.current, {
-      id: 758682785,
       width: 1000,
       loop: false,
+      url: "https://vimeo.com/826912993/ae4d06fc29",
     });
 
     playerElement.on("play", () => {
